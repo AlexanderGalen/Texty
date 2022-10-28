@@ -23,7 +23,7 @@ module.exports = () => {
       // set up service worker
       new InjectManifest({
         swSrc: './src/js/src-sw.js',
-        swDest: 'service-worker.js',
+        swDest: 'src-sw.js',
       }),
       // have webpack generate a manifest.json file
       new WebpackPwaManifest({
