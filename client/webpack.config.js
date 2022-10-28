@@ -22,7 +22,7 @@ module.exports = () => {
       }),
       // set up service worker
       new InjectManifest({
-        swSrc: './src/src-sw.js',
+        swSrc: './src/js/src-sw.js',
         swDest: 'service-worker.js',
       }),
       // have webpack generate a manifest.json file
@@ -34,13 +34,14 @@ module.exports = () => {
         theme_color: '#272822',
         start_url: './',
         publicPath: './',
-        // icons: [
-        //   {
-        //     src: path.resolve('/images/logo.png'),
-        //     sizes: [96, 128, 192, 256, 384, 512],
-        //     destination: path.join('assets', 'icons'),
-        //   },
-        // ],
+        fingerprints: false,
+        icons: [
+          {
+            src: path.resolve('./src/images/logo.png'),
+            sizes: [96, 128, 192, 256, 384, 512],
+            destination: path.join('assets', 'icons'),
+          },
+        ],
       }),
     ],
     module: {
